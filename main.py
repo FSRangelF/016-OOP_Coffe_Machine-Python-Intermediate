@@ -28,8 +28,7 @@ while not should_stop:
             money.report()
         elif menu.find_drink(option):
             valid_option = True
-            if maker.is_resource_sufficient(menu.find_drink(option)):
-                if money.make_payment(menu.find_drink(option).cost):
-                    maker.make_coffee(menu.find_drink(option))
+            if maker.is_resource_sufficient(menu.find_drink(option)) and money.make_payment(menu.find_drink(option).cost):
+                maker.make_coffee(menu.find_drink(option))
         else:
             print("You typed an invalid option. Please choose again.")
