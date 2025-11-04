@@ -3,6 +3,9 @@ from coffee_maker import CoffeeMaker
 from money_machine import MoneyMachine
 import art
 
+maker = CoffeeMaker()
+menu = Menu()
+money = MoneyMachine()
 
 should_stop = False
 while not should_stop:
@@ -11,9 +14,7 @@ while not should_stop:
         # a. Check the user’s input to decide what to do next.
         # b. The prompt should show every time action has completed, e.g. once the drink is dispensed. The prompt should show again to serve the next customer
     valid_option = False
-    maker = CoffeeMaker()
-    menu = Menu()
-    money = MoneyMachine()
+
     while not valid_option:
         option = input(f"What would you like? {menu.get_items()}: ").lower()
         # 2. Turn off the Coffee Machine by entering “off” to the prompt. For maintainers of the coffee machine, they can use “off” as the secret word to turn off the machine. Your code should end execution when this happens.
